@@ -17,7 +17,7 @@ function formSend(){
 	var movie_2_input = document.forms["search_form"]["movie_2"].value;
 	var movie_1_title = movie_1_input.toLowerCase().trim().replace(/\s/g, "+");
 	var movie_2_title = movie_2_input.toLowerCase().trim().replace(/\s/g, "+");
-  var api_url = 'http://www.omdbapi.com/?t=';
+  var api_url = 'https://www.omdbapi.com/?t=';
   var api_url_1 = api_url + movie_1_title;
   var api_url_2 = api_url + movie_2_title;
   setHistory(movie_1_input, movie_2_input);
