@@ -1,2 +1,0 @@
-# midob.github.io
-Portfolio
