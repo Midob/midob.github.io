@@ -1,0 +1,161 @@
+@import "normalize";
+@import "settings";
+
+body{
+	font-size: 14px;
+	line-height: 1.5;
+	font-family: $font-os;
+	background-color: $color-bg;
+	*{
+		box-sizing:border-box;
+	}
+}
+
+.btn{
+	border:0;
+	outline:0;
+	padding:10px;
+	cursor:pointer;
+	text-transform:uppercase;
+	font-family: $font-os;
+	font-weight:bold;
+	color:#fff;
+	transition:0.3s background-color;
+	&--submit{
+		padding:20px;
+		background-color:#2ecc71;
+		&:hover{
+			background-color:darken(#2ecc71, 5%);
+		}
+	}
+}
+
+.label{
+	color:#34495e;	
+	font-weight:bold;
+}
+
+input[type="text"]{
+	outline:0;
+	padding:10px;	
+	font-family: $font-os;
+	background-color:transparent;
+	color:#444;
+	transition: 0.3s background-color;
+	&:focus{
+		background-color:#f9f9f9;
+	}
+}
+
+header{
+	padding:20px;
+	text-align:center;
+	h1{
+		font-weight:800;
+		color: #a9a9b3;
+	}
+}
+
+main{
+	background-color:#fff;
+}
+
+*[class^="wrapper"]{
+	position:relative;
+}
+
+.wrapper--search{
+	padding:50px 10px;
+	text-align:center;
+	.search_form{
+		&__outer{
+			display:inline-block;
+			padding:5px 10px;
+			max-width: 100%;
+			text-align: left;
+		}
+		&__label{
+			display:block;
+		}
+		&__input[type="text"]{
+			border:3px solid #34495e;
+			max-width: 100%;
+			font-size:2em;
+			line-height:1.5;
+			&.validation:invalid{border-color:$color-error;}
+			&:valid{
+				border-color:$color-success;
+			}
+		}
+		&__btnbox{
+			display:block;
+			margin-top:30px
+		}
+	}
+}
+
+.wrapper--search_results{
+	color:#fff;
+	background-color:#34495e;
+	transition:0.3s all;
+	&.--error,&.--success{
+		padding:30px 60px 30px 30px;
+	}
+	&.--error{
+		background-color: $color-error;
+		p{
+			&:after{
+				position:absolute;
+				top:15px;
+				right:30px;
+				font-size:3em;
+				content:' :(';
+			}
+		}
+	}
+	&.--success{
+		background-color: $color-success;
+	}
+}
+
+.wrapper--search_history{
+	transition:0.3s all;
+	> h2{
+		padding:10px 30px;
+	}
+	table{
+		padding:0 30px 50px 30px;
+		width:100%;
+		text-align:left;
+		td,th{
+			padding:10px;
+		}
+		thead{
+			th{
+				color:#444;
+				font-weight:bold;
+			}	
+		}
+		tbody{
+			tr{
+				transition: 0.3s background-color;
+				&:nth-child(2n - 1){
+					background-color: #f9f9f9;
+				}	
+				&:nth-child(n):hover{
+					background-color: darken(#f9f9f9,5%);
+				}
+			}
+		}
+		@media(max-width:480px){
+			padding:0 0 30px 0;
+		}
+	}
+}
+
+footer{
+	padding:10px;
+	text-align:center;
+	color: #fff;
+	background-color: $color-bg-footer;
+}
